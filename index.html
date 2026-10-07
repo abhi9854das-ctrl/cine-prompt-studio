@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CinePrompt Studio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 25px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    textarea {
+      width: 100%;
+      height: 250px;
+      box-sizing: border-box;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #444;
+      background: #222;
+      color: white;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 20px;
+      border: 0;
+      border-radius: 8px;
+      background: #4f46e5;
+      color: white;
+      font-size: 16px;
+    }
+
+    #output {
+      margin-top: 20px;
+      padding: 15px;
+      background: #222;
+      border-radius: 10px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🎬 CinePrompt Studio</h1>
+
+    <textarea id="prompt" placeholder="अपना cinematic prompt यहाँ लिखें..."></textarea>
+
+    <button onclick="generatePrompt()">Generate Prompt</button>
+
+    <div id="output"></div>
+  </div>
+
+  <script>
+    function generatePrompt() {
+      const prompt = document.getElementById("prompt").value.trim();
+
+      if (!prompt) {
+        document.getElementById("output").textContent =
+          "कृपया पहले अपना prompt लिखें।";
+        return;
+      }
+
+      document.getElementById("output").textContent =
+        "Cinematic Prompt:\n\n" +
+        prompt +
+        "\n\nHyper-realistic 8K live-action cinematic movie shot, realistic human faces, natural lighting, detailed skin texture.";
+    }
+  </script>
+</body>
+</html>
